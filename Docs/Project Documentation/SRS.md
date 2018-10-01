@@ -1,21 +1,20 @@
 # Требования к проекту
 ### Содержание
-1. [Введение](#1)
-  1.1. [Исходные данные](#1.1)
-  1.2. [Возможности бизнеса](#1.2)
-  1.3. [Аналоги](#1.3)
-2. [Требования пользователя](#2)
-  2.1. [Программные интерфейсы](#2.1)
-  2.2. [Интерфейс пользователя](#2.2)
-  2.3. [Характеристики пользователей](#2.3)
-  2.4. [Предположения и зависимости](#2.4)
-3. [Системные требования](#3)
-  3.1 [Функциональные требования](#3.1)
-  3.2 [Нефункциональные требования](#3.2)
-     3.2.1 [Атрибуты качества](#3.2.1)
-     3.2.1.1 [Внешние критерии](#3.2.1.1)
-     3.2.1.2 [Внутренние критерии](#3.2.1.2)
-4. [Аналоги](#4) <br>
+1. [Введение](#1) <br>
+  1.1. [Исходные данные](#1.1) <br>
+  1.2. [Возможности бизнеса](#1.2) <br>
+  1.3. [Аналоги](#1.3) <br>
+2. [Требования пользователя](#2) <br>
+  2.1. [Программные интерфейсы](#2.1) <br>
+  2.2. [Интерфейс пользователя](#2.2) <br>
+  2.3. [Характеристики пользователей](#2.3) <br>
+  2.4. [Предположения и зависимости](#2.4) <br>
+3. [Системные требования](#3) <br>
+  3.1 [Функциональные требования](#3.1) <br>
+  3.2 [Нефункциональные требования](#3.2) <br>
+     3.2.1 [Атрибуты качества](#3.2.1) <br>
+     3.2.1.1 [Внешние критерии](#3.2.1.1) <br>
+     3.2.1.2 [Внутренние критерии](#3.2.1.2) <br>
 
 ## Глоссарий
 
@@ -41,14 +40,11 @@
 ### 2.1. Программные интерфейсы <a name="2.1"></a>
 Проект использует интерфейс программирования приложений Windows Forms.
 ### 2.2. Интерфейс пользователя <a name="2.2"></a>
-- Главный экран приложения
-[![Главное окно](1 "Главное окно")](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%BA%D0%BD%D0%BE.png "Главное окно")
-- Окно поиска
-[![Окно поиска](1 "Окно поиска")](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%9E%D0%BA%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0.png "Окно поиска")
-- Окно редактирования
-[![Окно редактирования](1 "Окно редактирования")](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%9E%D0%BA%D0%BD%D0%BE%20%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.png "Окно редактирования")
-- Окно удаления
-[![Окно удаления](1 "Окно удаления")](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%9E%D0%BA%D0%BD%D0%BE%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F.png "Окно удаления")
+
+- [Главный экран приложения](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%BA%D0%BD%D0%BE.png "Главный экран приложения")
+- [Окно поиска](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%9E%D0%BA%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0.png "Окно поиска")
+- [Окно редактирования](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%9E%D0%BA%D0%BD%D0%BE%20%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.png "Окно редактирования")
+- [Окно удаления](https://raw.githubusercontent.com/GudveN/School-Database/master/Docs/Project%20Documentation/Mockups/%D0%9E%D0%BA%D0%BD%D0%BE%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F.png "Окно удаления")
 
 Рассмотрим элементы двух окон, главного окна и окна редактирования:
 
