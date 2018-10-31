@@ -1,8 +1,4 @@
-# Диаграмма компонентов
+# Диаграмма компонентов и развертывания
 
-![1](../Component_Deployment/Component.png)
-
-# Диаграмма развертывания
-
-![2](../Component_Deployment/Deployment.png)
+![1](../Component_Deployment/comp_depl.png)
 
