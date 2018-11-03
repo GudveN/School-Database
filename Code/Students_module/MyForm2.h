@@ -92,7 +92,7 @@ namespace Students_module {
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Найти";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm2::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm2::Search_Click);
 			// 
 			// label1
 			// 
@@ -132,7 +132,7 @@ namespace Students_module {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void Search_Click(System::Object^  sender, System::EventArgs^  e);
 			 public: void select(std::vector <Marks>);
 	};
 }

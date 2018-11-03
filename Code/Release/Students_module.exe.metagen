@@ -33,13 +33,13 @@ Class Students_module.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
   Methods:
     scr_out(_Vector_iterator<std::_Vector_val<std::_Simple_types<Marks> > >): PrivateScope, Public, HideBySig
     insert(): PrivateScope, Public, HideBySig
-Class Students_module.MyForm3: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Methods:
-    delete_stud(vector<Marks\,std::allocator<Marks> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
 Class Students_module.MyForm2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     select(vector<Marks\,std::allocator<Marks> >*): PrivateScope, Public, HideBySig
+Class Students_module.MyForm3: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    delete_stud(vector<Marks\,std::allocator<Marks> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig

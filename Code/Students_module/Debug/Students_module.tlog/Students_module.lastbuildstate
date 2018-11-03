@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.5.2:PlatformToolSet=v140:EnableManagedIncrementalBuild=true:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
-Debug|Win32|D:\vs\Exersice 4\Students_module\|
+#TargetFrameworkVersion=v4.5.2:PlatformToolSet=v141:EnableManagedIncrementalBuild=true:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0.16299.0
+Debug|Win32|D:\ProjectGIT\School-Database\Code\|

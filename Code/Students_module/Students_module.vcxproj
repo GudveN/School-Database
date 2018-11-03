@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ExtractFromFile.h" />
     <ClInclude Include="Marks.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
@@ -146,15 +147,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Delete.cpp" />
-    <ClCompile Include="Insert.cpp" />
     <ClCompile Include="Marks.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="MyForm2.cpp" />
     <ClCompile Include="MyForm3.cpp" />
-    <ClCompile Include="Select.cpp" />
-    <ClCompile Include="Update.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">

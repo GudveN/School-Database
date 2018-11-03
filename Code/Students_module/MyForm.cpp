@@ -1,4 +1,3 @@
-
 #include "windows.h"
 #include <iostream>
 #include <fstream>
@@ -7,13 +6,12 @@
 #include <list>
 #include <vector>
 #include <iterator>
+#include "ExtractFromFile.h"
 #include "Marks.h"
 #include "MyForm.h"
 #include "MyForm1.h"
 #include "MyForm2.h"
 #include "MyForm3.h"
-
-//int i=1;
 
 using namespace Students_module;
 using namespace std;
@@ -26,70 +24,103 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	return 0;
 }
 
-
-Void MyForm::button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->insert();
-}
-
-
-void func(vector <Marks> &stud) {
-	
-	ifstream fi1("students.txt");
-	ifstream fi2("marks.txt");
-
-	Marks m1;
-	string tmp_str;
-
-	int y; char x;
-	double tmp;
-
-	bool z = false;
-	while ((!fi1.eof()) && (!fi2.eof())) {
-
-		z = false;
-		(fi1 >> x).get();
-
+void MyForm::insert() {
+	int i = 1;
+	ifstream fi("students.txt");
+	char x;
+	while (!fi.eof()) {
+		fi >> x;
 		if (x == '*') {
-			z = true;
-			(fi1 >> m1.id).get();
-
-			m1.name = new char[20];
-			fi1.getline(m1.name, 20);
-
-			m1.surname = new char[20];
-			fi1.getline(m1.surname, 20);
-
-			m1.patr = new char[20];
-			fi1.getline(m1.patr, 20);
-
-			m1.addr = new char[20];
-			fi1.getline(m1.addr, 20);
-
-			m1.birthday = new char[20];
-			fi1.getline(m1.birthday, 20);
-
-			(fi1 >> m1.klass).get();
-
-		}
-		(fi2 >> x).get();
-		if (x == '*') {
-			(fi2 >> y).get();
-			if (y == m1.id) {
-				(fi2 >> m1.litr).get();
-				(fi2 >> m1.history).get();
-				(fi2 >> tmp).get();
-				(fi2 >> m1.math).get();
-				(fi2 >> m1.physics).get();
-				(fi2 >> tmp).get();
-				(fi2 >> tmp).get();
-			}
-		}
-		if (z) {
-			stud.push_back(m1);
+			fi >> i;
+			i++;
 		}
 	}
 
-	fi1.close(); fi2.close();
+	ofstream fo("copy_stud.txt");
+	ifstream fii("students.txt");
+	ofstream fo1("copy_marks.txt");
+	ifstream fi1("marks.txt");
+
+	string str;
+
+	while (getline(fii, str))
+		fo << str << '\n';
+
+	while (getline(fi1, str))
+		fo1 << str << '\n';
+
+	fo.close(); fo1.close();
+	fii.close(); fi1.close();
+
+
+	ofstream f1("students.txt", ios::app);
+
+	msclr::interop::marshal_context context;
+	string tmp_str;
+	Marks m;
+
+	f1 << "\n*\n";
+
+	m.id = i;
+	f1 << m.id << "\n";
+
+	tmp_str = context.marshal_as<string>(MyForm::textBox1->Text);
+	m.name = new char[20];
+	strcpy(m.name, tmp_str.c_str());
+	f1 << m.name << "\n";
+
+	tmp_str = context.marshal_as<string>(MyForm::textBox2->Text);
+	m.surname = new char[20];
+	strcpy(m.surname, tmp_str.c_str());
+	f1 << m.surname << "\n";
+
+	tmp_str = context.marshal_as<string>(MyForm::textBox3->Text);
+	m.patr = new char[20];
+	strcpy(m.patr, tmp_str.c_str());
+	f1 << m.patr << "\n";
+
+	tmp_str = context.marshal_as<string>(MyForm::textBox4->Text);
+	m.addr = new char[20];
+	strcpy(m.addr, tmp_str.c_str());
+	f1 << m.addr << "\n";
+
+	tmp_str = context.marshal_as<string>(MyForm::textBox5->Text);
+	m.birthday = new char[20];
+	strcpy(m.birthday, tmp_str.c_str());
+	f1 << m.birthday << "\n";
+
+	m.klass = Convert::ToInt32(MyForm::textBox6->Text);
+	f1 << m.klass;
+
+	f1.close();
+
+	ofstream f2("marks.txt", ios::app);
+
+	f2 << "\n*\n";
+
+	f2 << m.id << "\n";
+	m.litr = Convert::ToInt32(MyForm::textBox7->Text);
+	f2 << m.litr << "\n";
+
+	m.history = Convert::ToInt32(MyForm::textBox8->Text);
+	f2 << m.history << "\n";
+
+	f2 << m.avg_hum() << "\n";
+
+	m.math = Convert::ToInt32(MyForm::textBox9->Text);
+	f2 << m.math << "\n";
+
+	m.physics = Convert::ToInt32(MyForm::textBox10->Text);
+	f2 << m.physics << "\n";
+
+	f2 << m.avg_tech() << "\n";
+	f2 << m.avg() << "\n";
+
+	f2.close();
+}
+
+Void MyForm::Add_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->insert();
 }
 
 void MyForm::scr_out(vector <Marks>::iterator p) {
@@ -125,21 +156,6 @@ void MyForm::scr_out(vector <Marks>::iterator p) {
 	richTextBox1->Text += "\n\n";
 }
 
-Void MyForm::âñåõToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-
-	richTextBox1->Clear();
-
-	vector <Marks> stud;
-	func(stud);
-		
-	vector <Marks>::iterator p = stud.begin();
-	while (p != stud.end()) {
-		this->scr_out(p);
-			p++;
-	}
-		
-}
-
 Void MyForm::ğåäàêòèğîâàíèåToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	MyForm1 ^f1;
 	f1 = gcnew MyForm1();
@@ -165,51 +181,6 @@ Void MyForm::ğåäàêòèğîâàíèåToolStripMenuItem_Click(System::Object^  sender, Syst
 	
 }
 
-
-Void MyForm1::button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	MyForm1 ^f1;
-	f1 = gcnew MyForm1();
-
-	MyForm^ f = safe_cast<MyForm^>(this->Owner);
-	f->richTextBox1->Clear();
-
-	vector <Marks> stud;
-	func(stud);
-
-	vector <Marks>::iterator p = stud.begin();
-	update(stud);
-	
-	ofstream fs("students.txt");
-	ofstream fm("marks.txt");
-	
-	p = stud.begin();
-
-	while (p != stud.end()) {
-		fs << "\n*\n";
-		fs << p->id << "\n";
-		fs << p->name << "\n";
-		fs << p->surname << "\n";
-		fs << p->patr << "\n";
-		fs << p->addr << "\n";
-		fs << p->birthday << "\n";
-		fs << p->klass;
-		fm << "\n*\n";
-		fm << p->id << "\n";
-		fm << p->litr << "\n";
-		fm << p->history << "\n";
-		fm << p->avg_hum() << "\n";
-		fm << p->math << "\n";
-		fm << p->physics << "\n";
-		fm << p->avg_tech() << "\n";
-		fm << p->avg();
-		p++;
-	}
-
-
-	fs.close();
-	this->Close();
-}
-
 Void MyForm::îòìåíàToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	ifstream fi("copy_stud.txt");
@@ -232,25 +203,12 @@ Void MyForm::îòìåíàToolStripMenuItem_Click(System::Object^  sender, System::Even
 
 }
  
-
 Void MyForm::ïîèñêToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	MyForm2 ^f2;
 	f2 = gcnew MyForm2();
 	f2->Owner = this;
 	f2->Show();
 }
-
-
-Void MyForm2::button1_Click(System::Object^  sender, System::EventArgs^  e) {
-
-	vector <Marks> stud;
-	func(stud);
-
-	select(stud);
-	
-	this->Close();
-}
-
 
 Void MyForm::óäàëåíèåToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -277,41 +235,19 @@ Void MyForm::óäàëåíèåToolStripMenuItem_Click(System::Object^  sender, System::Ev
 
 }
 
+Void MyForm::âñåõToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 
-Void MyForm3::button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	
+	richTextBox1->Clear();
+
 	vector <Marks> stud;
 	func(stud);
 
-	delete_stud(stud);
-	ofstream f1("students.txt"); ofstream f2("marks.txt");
 	vector <Marks>::iterator p = stud.begin();
-
 	while (p != stud.end()) {
-		f1 << "\n*\n";
-		f1 << p->id << "\n";
-		f1 << p->name << "\n";
-		f1 << p->surname << "\n";
-		f1 << p->patr << "\n";
-		f1 << p->addr << "\n";
-		f1 << p->birthday << "\n";
-		f1 << p->klass;
-
-		f2 << "\n*\n";
-		f2 << p->id << "\n";
-		f2 << p->litr << "\n";
-		f2 << p->history << "\n";
-		f2 << p->avg_hum() << "\n";
-		f2 << p->math << "\n";
-		f2 << p->physics << "\n";
-		f2 << p->avg_tech() << "\n";
-		f2 << p->avg();
+		this->scr_out(p);
 		p++;
 	}
 
-	f1.close(); f2.close();
-
-	this->Close();
 }
 
 Void MyForm::õîğîøèõÓ÷åíèêîâToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {

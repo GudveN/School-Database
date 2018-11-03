@@ -57,9 +57,11 @@ namespace Students_module {
 	private: System::Windows::Forms::TextBox^  textBox6;
 	private: System::Windows::Forms::TextBox^  textBox7;
 	private: System::Windows::Forms::TextBox^  textBox8;
+	private: System::Windows::Forms::Button^  input;
 
 
-	private: System::Windows::Forms::Button^  button1;
+
+
 	private: System::Windows::Forms::TextBox^  textBox9;
 	private: System::Windows::Forms::TextBox^  textBox10;
 	private: System::Windows::Forms::Label^  label1;
@@ -109,7 +111,7 @@ namespace Students_module {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->input = (gcnew System::Windows::Forms::Button());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -276,15 +278,15 @@ namespace Students_module {
 			this->textBox8->TabIndex = 10;
 			this->textBox8->Text = L"11";
 			// 
-			// button1
+			// input
 			// 
-			this->button1->Location = System::Drawing::Point(60, 317);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 13;
-			this->button1->Text = L"¬‚Ó‰";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->input->Location = System::Drawing::Point(60, 317);
+			this->input->Name = L"input";
+			this->input->Size = System::Drawing::Size(75, 23);
+			this->input->TabIndex = 13;
+			this->input->Text = L"¬‚Ó‰";
+			this->input->UseVisualStyleBackColor = true;
+			this->input->Click += gcnew System::EventHandler(this, &MyForm::Add_Click);
 			// 
 			// textBox9
 			// 
@@ -414,7 +416,7 @@ namespace Students_module {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(479, 352);
+			this->ClientSize = System::Drawing::Size(479, 351);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->label10);
@@ -429,7 +431,7 @@ namespace Students_module {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->textBox9);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->input);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->textBox6);
@@ -453,7 +455,7 @@ namespace Students_module {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void Add_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void ‚˚‚Ó‰ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void ‚ÒÂıToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e);

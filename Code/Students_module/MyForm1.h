@@ -102,7 +102,7 @@ namespace Students_module {
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Редактировать";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::Edit_Click);
 			// 
 			// textBox2
 			// 
@@ -185,7 +185,7 @@ namespace Students_module {
 		
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void Edit_Click(System::Object^  sender, System::EventArgs^  e);
 			 public: void update(std::vector <Marks> &);
 	};
 		

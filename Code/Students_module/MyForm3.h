@@ -75,7 +75,7 @@ namespace Students_module {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Удалить";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm3::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm3::Delete_Click);
 			// 
 			// label1
 			// 
@@ -104,7 +104,7 @@ namespace Students_module {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void Delete_Click(System::Object^  sender, System::EventArgs^  e);
 	public: void delete_stud(std::vector <Marks> &);
 	};
 }
