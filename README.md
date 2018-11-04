@@ -3,3 +3,4 @@
 
 **SRS: [RU](https://github.com/GudveN/School-Database/blob/master/Docs/ProjectDocumentation/SRS.md)** <br>
 **Диаграммы: [UseCase](https://github.com/GudveN/School-Database/tree/master/Docs/UseCase) , [Activity](https://github.com/GudveN/School-Database/tree/master/Docs/Activity) , [Sequence](https://github.com/GudveN/School-Database/tree/master/Docs/Sequence) , [State](https://github.com/GudveN/School-Database/tree/master/Docs/State) , [Class](https://github.com/GudveN/School-Database/tree/master/Docs/Class) , [Component/Deployment](https://github.com/GudveN/School-Database/tree/master/Docs/Component_Deployment)**
+**Тестирование: [TestPlan](https://github.com/GudveN/School-Database/blob/master/Testing/TestPlan.md) , [TestResults](https://github.com/GudveN/School-Database/blob/master/Testing/TestResults.md)** <br>
